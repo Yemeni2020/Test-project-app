@@ -38,8 +38,9 @@
             <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </form>
         <div id="commentsSection">
-            <!-- Comments will be loaded here dynamically -->
+            <!-- Comments will be loaded  dynamically -->
         </div>
+        <div id="google-recaptcha-checkbox"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -71,5 +72,16 @@
             }
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+
+<script type="text/javascript">
+    var onloadCallback = function() {
+        grecaptcha.render('google-recaptcha-checkbox', {
+            'sitekey' : 'my-ste-key-goes-here'
+        });
+    };
+</script>
 </body>
 </html>
